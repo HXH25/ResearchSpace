@@ -1,0 +1,27 @@
+{
+  "format_version": "1.0",
+  "csv_encoding": "UTF-8 BOM",
+  "csv_array_encoding": "JSON string",
+  "missing_value_meaning": "Unknown or unavailable in retrieved content; never a negative factual claim",
+  "faculty_profiles": {
+    "profile_id": "Stable ID from name and canonical official source URL; not an authoritative person ID",
+    "name": "Name as shown in official directory/profile",
+    "primary_unit": "Official site/subsite affiliation; nullable",
+    "affiliation_basis": "official_site_or_subsite / listing_context_only / unresolved",
+    "listed_by_units": "Discovery context, not a list of all appointments",
+    "position_titles": "Explicit extracted titles; may include historical or concurrent titles",
+    "research_topics": "Brief factual topic phrases; empty array if not extracted",
+    "research_evidence_excerpt": "Short quotation for traceability; not a full biography",
+    "source_url": "Official page to verify",
+    "fetched_at": "Retrieval time in UTC, not a page publication or update date",
+    "retrieval_method": "direct_official_page or search-service extracted text representation",
+    "source_crawl_hint": "Source freshness hint from retrieval service when supplied; may be absent",
+    "profile_kind": "individual_page / scoped_roster_card"
+  },
+  "collection_gaps": {
+    "not_fetched_within_time_budget": "Not attempted before stopping; not evidence of an inaccessible page",
+    "retrieval_failed": "Attempted but no usable page text obtained",
+    "profile_identity_or_content_not_verified": "Retrieved candidate did not satisfy profile identity/content rules",
+    "research_topics_not_found_in_retrieved_content": "Profile exists, research information missing from retrieved representation"
+  }
+}

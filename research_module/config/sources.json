@@ -1,0 +1,8 @@
+[
+  {"id":"hkust_urop","name":"香港科技大学 UROP 公开项目","type":"hkust","allowed_hosts":["urop.hkust.edu.hk"],"urls":["https://urop.hkust.edu.hk/projects"],"follow_prefixes":["/projects"],"delay":1.2,"region":"中国香港","institution":"香港科技大学","documentation":"https://urop.hkust.edu.hk/For_Students","coverage_note":"遍历配置的公开项目链接与列表分页；不进入登录申请系统。仅对已访问页面负责，解析后需审核招募状态。"},
+  {"id":"nih_reporter","name":"NIH RePORTER 研究项目","type":"nih","allowed_hosts":["api.reporter.nih.gov"],"endpoint":"https://api.reporter.nih.gov/v2/projects/search","delay":1.1,"documentation":"https://api.reporter.nih.gov/","criteria":{"include_active_projects":true},"coverage_note":"按关键词分页；当前活跃资助项目的线索，不代表学生招募。最大 offset 14999，更大结果需要拆分查询。"},
+  {"id":"nsf_awards","name":"NSF 资助研究项目","type":"nsf","allowed_hosts":["api.nsf.gov"],"endpoint":"https://api.nsf.gov/services/v1/awards.json","delay":1.1,"documentation":"https://www.nsf.gov/digital/developer","coverage_note":"按关键词分页检索资助记录；不是科研助理岗位或学生申请系统。端点需在部署网络完成联调。"},
+  {"id":"eth_ssrf","name":"ETH 计算机暑研官方页面","type":"web","allowed_hosts":["inf.ethz.ch"],"urls":["https://inf.ethz.ch/studies/summer-research-fellowship/how-to-apply.html"],"follow_prefixes":[],"institution":"ETH Zurich","region":"瑞士","coverage_note":"官方页面线索。自动更新只保留待审核线索；年度资格、时间与开放状态由人工核对。"},
+  {"id":"epfl_summer","name":"Summer@EPFL 官方页面","type":"web","allowed_hosts":["summer.epfl.ch"],"urls":["https://summer.epfl.ch/"],"follow_prefixes":[],"institution":"EPFL","region":"瑞士","coverage_note":"项目计划入口，具体实验室与年度申请窗口需核对。"},
+  {"id":"thu_public","name":"清华公开海外学习通知","type":"web","allowed_hosts":["www.tsinghua.edu.cn"],"urls":["https://www.tsinghua.edu.cn/gjhz/info/1088/2769.htm"],"follow_prefixes":[],"institution":"清华大学","region":"中国大陆","coverage_note":"仅公开网页，不采集 THU info 内网。新增公告入口与跟踪路径可在配置中添加。"}
+]

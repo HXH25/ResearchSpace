@@ -1,0 +1,24 @@
+{
+  "collected_at_utc": "2026-10-18T08:36:26.571824+00:00",
+  "scope": "Public official Tsinghua University websites; no private SRT source records included",
+  "official_directory_url": "https://www.tsinghua.edu.cn/yxsz.htm",
+  "unit_entries": 133,
+  "verified_profile_records": 4026,
+  "distinct_name_strings": 3298,
+  "records_with_research_topics": 2995,
+  "records_from_individual_pages": 3507,
+  "records_from_scoped_roster_cards": 519,
+  "profile_candidates_pending_fetch": 1756,
+  "candidate_records_requiring_review_or_failed": 875,
+  "directory_pages_attempted": 928,
+  "directory_pages_pending": 1230,
+  "claimed_university_wide_completeness": false,
+  "gap_reason_counts": {
+    "not_fetched_within_time_budget": 1756,
+    "profile_identity_or_content_not_verified": 478,
+    "retrieval_failed": 397,
+    "research_topics_not_found_in_retrieved_content": 1031
+  },
+  "counting_note": "Profile records are source-specific records, not a deduplicated authoritative headcount; cross-appointments and multiple official biographies may occur.",
+  "assembled_at_asia_shanghai": "2026-10-18T16:36:26.576820+08:00"
+}

@@ -1,0 +1,37 @@
+{
+  "taskDate": "2026-10-18",
+  "module": "outreach",
+  "version": "2.1.0",
+  "hostVersion": "0.1.2",
+  "contractVersion": "1.0.0",
+  "npmRunCheck": "passed",
+  "testFiles": 7,
+  "tests": 69,
+  "moduleTests": 57,
+  "originalHostTests": 12,
+  "originalHostFilesModified": 0,
+  "browser": {
+    "browser": "153.0.8010.0",
+    "checks": [
+      "真实宿主：创建本地账号与完成六步画像",
+      "自动发现 outreach 入口与路由",
+      "缺少目录时默认隐藏查询详情",
+      "主动展开查询诊断",
+      "本地中文草稿",
+      "同事实切换英文，无重新检索",
+      "使用宿主 IndexedDB 保存草稿",
+      "真实浏览器剪贴板复制",
+      "TXT 下载包含正确收件人和邮件",
+      "桌面无水平溢出",
+      "刷新后从真实 IndexedDB 读取草稿",
+      "移动端无水平溢出",
+      "真实宿主账号B看不到账号A的草稿",
+      "切回账号A仍能读取原草稿",
+      "浏览器无未处理 JavaScript 异常"
+    ],
+    "errors": []
+  },
+  "liveModelTested": false,
+  "liveSearchGatewayTested": false,
+  "windowsTested": false
+}

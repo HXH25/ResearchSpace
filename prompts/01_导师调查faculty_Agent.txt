@@ -1,0 +1,27 @@
+【任务】你是 ResearchSpace 的 faculty 模块开发 Agent。请制作完整、可直接集成的“导师调查与科研方向建议”功能包 `faculty-module.zip`。
+
+一、必须遵守的冻结协议
+项目宿主使用 React 19 + TypeScript + Vite + React Router，统一 SDK `src/sdk/contracts.ts` 版本 `CONTRACT_VERSION='1.0.0'`。开始先阅读随任务提供的 `MEMORY.md`、`docs/产品规划.md`、`docs/模块集成协议.md`、`src/sdk/contracts.ts`。只写 `src/modules/faculty/` 下的文件，唯一入口 `src/modules/faculty/module.tsx`，`export default` 对象符合 `ResearchModule`，其中 `id:'faculty'`, `icon:'graduation-cap'`, `Root` 是 `ModulePageProps` React 组件。不得改 Host、SDK、package.json、其他模块。
+跨模块交互只能使用 `api.catalog`、`api.navigation`、`api.storage`、`api.ai`。画像来自只读 `profile: StudentProfile`，不要另造账户系统或数据格式。宿主路径 `/app/faculty/*`，绝不在模块里新建 BrowserRouter。
+
+二、必须实现
+1. 导师列表：关键词、学校/院系与方向筛选、加载/无结果/错误状态，URL 搜索参数 `?q=` 与宿主全站搜索兼容；公开来源和最近核实日期要能看见。
+2. 导师详情路由 `/:facultyId`：研究背景、官方主页、研究领域、代表论文、团队名称、公开团队成员与角色、公开本科生参与案例、指导与招募信息；如果来源缺失显示“未知/未核实”，而不是推断。
+3. 公开视频/访谈/讲座索引组件，显示发布者、日期、链接和主题。优先官方/主办方来源；没有经许可的字幕或文稿时只显示视频条目，不编造“导师风格/指导方式”的解读。
+4. 匹配解释：结合 StudentProfile 的兴趣区域、关键词、技能与证据、工作偏好、指导偏好、可投入时间，输出启发式兴趣相关度与准备建议；清楚显示使用哪些字段、缺失哪些信息。允许展示“匹配参考分（非录取预测）”，明确 **不能显示伪造的‘套瓷成功率’**，只有经校准的申请结果数据可估计真实概率。
+5. 招募状态显示 `confirmed_open` / `past_opening` / `closed` / `unknown`，只有来源+有时效的 verification 时间才是已证实开放。对未确认的项目默认 unknown。
+6. 操作按钮：收藏（`api.storage`）、查找研究方向相关项目（`api.catalog.searchOpportunities`，不要把主题相近当成直属项目）、围绕导师提问（`api.navigation.go('/app/community?kind=faculty&id=...')`）、准备联系（`api.navigation.go('/app/outreach?facultyId=...')`）。
+7. 注册 `providers.faculty`，实现 `search(FacultySearchQuery, signal?)`、`getById(id, signal?)`，全局可被 outreach、opportunities 读取。
+8. 提供 `fixtures` 明确虚构且 `isDemo:true` / `sources[].type:'mock'` 的 JSON 数据与运行时验证（zod），禁止把示例导师伪装为真实清华教师。真实数据接入应可用 SourceAdapter 替换本地 JSON；别在浏览器直接爬公众号或权限校内站点。
+9. 来源结构 `EvidenceSource`：标题、原始 URL(http/https)、类型、访问时间、发布时间(如有)。公开团队成员只采纳公开学术/职业信息；不可展示私人手机、学号、未经公开的关系或个人评价。
+
+三、数据模型严格复用
+只导入 `FacultyRecord`, `FacultySearchQuery`, `FacultyProvider`, `TeamMemberPublic`, `EvidenceSource`, `StudentProfile`, `HostApi`, `ResearchModule`。除独立 UI view model 外不重新定义与 SDK 同名但不兼容的 interface。链接统一按 `api.navigation.facultyPath(faculty.id)` 建立，跨项目 `api.navigation.opportunityPath()`。
+
+四、资料收集设计（预留模块化适配）
+实现 `StaticFacultyAdapter` 读取 fixtures；定义可替换的 `FacultySourceAdapter` interface，后续可接学校教师主页、实验室、DBLP/OpenAlex、公开报告。单独保留“最近读取网页”和“最近核实招募”时间；学术同名识别需要机构+官方主页/标识协同核实。资料缺失应显示来源不存在，所有 AI 总结须声明来自哪些已有公开资料。
+用户提供的微信文章参考：https://mp.weixin.qq.com/s/hyx0_t_89fsPDB68ipX-4A 。**仅当能够真实读取并确认来源时使用，不可凭链接臆测内容。**
+
+五、验收与交付
+提供 README、源码、完整清楚标识演示的 fixtures、vitest 测试：关键词搜索/方向过滤、跨模块 provider、缺失字段可用性、匹配分解释、未知招募状态防误判。不得引入新根级依赖（只使用宿主已安装的 react/react-router-dom/zod/lucide-react 等）。
+ZIP 唯一顶层应是 `src/modules/faculty/`，不带 package.json/node_modules/dist/.env；解压到宿主根目录后 `npm run check` 应通过。README 写清“已实现 / 演示 / 真数据待接入”。

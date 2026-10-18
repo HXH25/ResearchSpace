@@ -1,0 +1,268 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "ResearchSpace API",
+    "version": "1.0.0",
+    "description": "Companion to docs/API.md and DATA_MODEL.md; payloads are JSON."
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "健康检查",
+        "responses": {
+          "200": {
+            "description": "成功，结构见API.md"
+          },
+          "400": {
+            "description": "无效输入"
+          }
+        }
+      }
+    },
+    "/api/projects": {
+      "get": {
+        "summary": "公开项目列表与筛选",
+        "responses": {
+          "200": {
+            "description": "成功，结构见API.md"
+          },
+          "400": {
+            "description": "无效输入"
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kind",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "region",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "institution",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "source_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ]
+      }
+    },
+    "/api/projects/{id}": {
+      "get": {
+        "summary": "项目详情",
+        "responses": {
+          "200": {
+            "description": "成功，结构见API.md"
+          },
+          "400": {
+            "description": "无效输入"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/recommend": {
+      "post": {
+        "summary": "画像推荐",
+        "responses": {
+          "200": {
+            "description": "成功，结构见API.md"
+          },
+          "400": {
+            "description": "无效输入"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stats": {
+      "get": {
+        "summary": "覆盖统计",
+        "responses": {
+          "200": {
+            "description": "成功，结构见API.md"
+          },
+          "400": {
+            "description": "无效输入"
+          }
+        }
+      }
+    },
+    "/api/sources": {
+      "get": {
+        "summary": "来源注册表",
+        "responses": {
+          "200": {
+            "description": "成功，结构见API.md"
+          },
+          "400": {
+            "description": "无效输入"
+          }
+        }
+      }
+    },
+    "/api/collect": {
+      "post": {
+        "summary": "启动采集任务",
+        "responses": {
+          "400": {
+            "description": "无效输入"
+          },
+          "202": {
+            "description": "任务已创建"
+          }
+        },
+        "security": [
+          {
+            "adminBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/jobs": {
+      "get": {
+        "summary": "采集任务列表",
+        "responses": {
+          "200": {
+            "description": "成功，结构见API.md"
+          },
+          "400": {
+            "description": "无效输入"
+          }
+        },
+        "security": [
+          {
+            "adminBearer": []
+          }
+        ]
+      }
+    },
+    "/api/import": {
+      "post": {
+        "summary": "导入项目JSON",
+        "responses": {
+          "200": {
+            "description": "成功，结构见API.md"
+          },
+          "400": {
+            "description": "无效输入"
+          }
+        },
+        "security": [
+          {
+            "adminBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/export": {
+      "get": {
+        "summary": "仅导出公开项目",
+        "responses": {
+          "200": {
+            "description": "成功，结构见API.md"
+          },
+          "400": {
+            "description": "无效输入"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "adminBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

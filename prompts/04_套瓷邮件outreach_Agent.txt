@@ -1,0 +1,25 @@
+【任务】你是 ResearchSpace 的 outreach 模块 Agent，请交付真正能使用的“个性化科研联系邮件助手”`outreach-module.zip`。
+
+一、公共约定
+阅读 MEMORY.md、docs/产品规划.md、docs/模块集成协议.md、src/sdk/contracts.ts。协议 `1.0.0`；只允许修改 `src/modules/outreach/` 内文件。入口 `src/modules/outreach/module.tsx`，默认导出 `ResearchModule` (`id:'outreach'`, `icon:'mail'`, Root 接收 `ModulePageProps`)。禁止自己创建账户系统、调用未授权远程模型、改主程序、改 SDK、存明文 API Key、安装根级新依赖或在功能目录外落文件。
+
+二、必须实现
+1. 科研邮件页面：URL 参数支持 `?facultyId=...`、`?opportunityId=...`，分别调用 `api.catalog.getFacultyById` / `api.catalog.getOpportunityById`，填充可验证的导师与项目事实（原始网址与日期可查看）；未安装导师/项目模块或 ID 无效时允许用户手动输入并明确“尚未核实”。
+2. 语言支持中文与英文，架构可扩展其他语种；学生可选择目的（询问是否招本科生/申请公开项目/咨询准备材料/请求允许参加公开活动等）、语气（正式/简练）、联系时间与可投入时长。
+3. 提供资料真实性检查：学生自己选择“只看过介绍/读过论文摘要/通读过论文/确实复现过”的等级；不能把低等级重写成高等级，也不能虚构经历、奖项、与导师关系、公开邮箱或项目已经开放。针对每一项具体导师研究事实，页面可展示来源。
+4. 无 AI 时也能用：确定性的本地模板生成完整的主题、称呼、正文、落款及可附材料清单，支持改写和编辑；中英文文案自然、格式规范，没有 TODO 占位字样。
+5. AI 可选：由宿主提供 `api.ai.state` 与 `api.ai.generate`，不得直接 fetch 任意模型供应商 URL。调用远程 AI 前显示将发送的 **全部资料预览**，用户主动勾选同意，才设置 `containsPersonalData:true, personalDataConsent:true`；拒绝/未配置/网络失败时保留本地模板或之前草稿，并显示清晰原因。用户不选择 AI 仍可完成。
+6. 草稿可通过 `api.storage` 保存、读取、重命名、删除（当前账号当前模块）；文本可复制、导出 .txt。可记录用户自己选择的状态“准备中/已发送/已回复/不再联系”，但不暗示邮件真的发出或被读到；首版**不得自动发送邮件**。
+7. 通过 `api.navigation.facultyPath` / `opportunityPath` 返回相关对象详情，或点击去社区提问题。
+
+三、关键数据和逻辑
+标准数据只用 SDK 的 `StudentProfile`、`FacultyRecord`、`OpportunityRecord`、`EvidenceSource`, `HostApi`。不得为了方便在本模块重新定义另一套导师字段。邮件生成时只取由学生自己选择确认的字段；技能 evidence 缺失就写普通的真实探索意愿，不编造经历。
+写单独的纯函数 `buildEmailDraft(input) => { subject:string; body:string; attachmentSuggestions:string[]; caveats:string[] }`，便于单元测试。使用合理的人名/署名默认值（可编辑，若用户只填昵称，不擅自称其实名）。如果收件人没有公开邮箱则输出内容，但不虚构收件地址。
+
+四、邮件质量规范
+- 中文邮件：简洁主题、得体称呼、课程/项目背景、自身与研究方向的一点真实关联、明确提出希望了解的机会和投入时间、礼貌结尾、可附个人简历/作品。
+- 英文邮件：专业邮件格式（Subject / Dear Professor / concise paragraphs / Best regards），表达具体但不过度夸大；不要保证回复或录取。
+- 不写套话过多的赞美、不批量营销、不使用不可证实的论文细节，不生成隐瞒个人经历的虚假信息。
+
+五、测试及交付
+提供 README、module.tsx、模板与编辑器组件、草稿仓储、vitest 测试（中英文模板、无资料降级、材料等级约束、跨账户数据隔离按 HostApi、AI 无同意阻断、离线完整流程）。不附模型密钥，不添加根级依赖。ZIP 顶层文件必须是 `src/modules/outreach/...`，解压到宿主即可被扫描。

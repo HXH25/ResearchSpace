@@ -1,0 +1,23 @@
+【任务】你负责 ResearchSpace 的公共社区模块 `community`，请开发独立的 `community-module.zip`，宿主无需改动即可集成。
+
+一、冻结协议（绝对不可改）
+请先阅读 MEMORY.md、docs/产品规划.md、docs/模块集成协议.md、src/sdk/contracts.ts。仅允许写 `src/modules/community/` 目录。入口 `src/modules/community/module.tsx`，默认导出 `ResearchModule`，`contractVersion: CONTRACT_VERSION`, `id:'community'`, `icon:'messages-square'`, Root 接收 `ModulePageProps`。不可额外启动 BrowserRouter，不可写宿主或其他模块、不可直接操作 localStorage/IndexedDB、不可增加全局依赖。
+
+二、产品需求
+作为清华本科生科研公共交流平台：允许讨论科研入门方向、具体导师/课题组公开资料、科研项目申请、前辈经验和研究方法；可以“提问、回答、分享经验、提交更正”。尽量沿用“小 Git 书”的 GitHub 原生轻后端理念，但第一阶段不做私聊。
+
+三、必须实现
+1. 社区首页：分类导航（方向入门、导师/团队问题、具体项目、经历分享）、搜索/筛选说明、如何提好一个问题、展示演示/真实内容状态。
+2. URL 支持 `?kind=faculty&id=<id>`、`?kind=opportunity&id=<id>`，调用 `api.catalog` 显示对应标准记录的标题、来源等，不要在社区页自行维护另一套导师/项目资料；不存在时仍可正常提问。
+3. 使用宿主 `api.config.community` 中 `repo` / `repoId` / `category` / `categoryId` 配置；参数未满足时显示“尚未连接公共仓库”，附清晰的管理员配置说明；**不能臆造仓库 ID**。
+4. 实际发布新话题：跳转合法公开仓库 `https://github.com/<owner>/<repo>/discussions/new/choose`，由 GitHub 完成认证、发帖和回复。可提供模板（标题、提问的背景/已查资料/具体问题）并支持复制，不要声称已在本站发布。
+5. giscus 嵌入：宿主已安装 `@giscus/react`，对于拥有完整配置的仓库，在话题/导师/项目页用稳定唯一 term 关联 Discussion；使用 `mapping='specific'` 或其他不会受 HashRouter/ query 参数变化影响的稳定策略。不要把本地 profile 的私人字段拼进公开 term/title，默认不上传个人画像。
+6. 帖子/评论作者身份属于 GitHub，与本地 ResearchSpace 昵称不同。禁止做虚假的“本地注册即可在 Github 发帖”。没有授权 token 时不能调用需要认证的 GitHub GraphQL 写接口；不能在浏览器存 PAT/私有仓库密钥。
+7. 社区规则：个人经验与官方可核实事实须区分；不披露电话、学号、私人邮箱、未公开人员关系；允许对项目/指导经历进行有上下文的第一手描述，但不给导师贴未经核实的负面标签或“录取成功率”。提供清晰的纠错/举报入口，引导用户在 GitHub 上使用原生 Report/Moderation。
+8. 独立的论坛式界面 + 清楚标“演示内容”的 mock fixtures；不能把假的评论当真实用户反馈。
+
+四、数据与隐私
+不需要自己的数据库或重型服务器。公开论坛内容存放 GitHub Discussions，本地收藏/草稿（如有）通过 `api.storage`；任何 GitHub 外链应校验 repo 属于 `owner/name` 格式、使用 HTTPS。Github 数据及运行时配置可由主程序注入。
+
+五、验收交付
+ZIP 顶层路径直接为 `src/modules/community/...`；含 README、module.tsx、页面、演示数据、规则文案、vitest 关键用例（未配置社区降级、URL kind/id、非法 repo 不渲染危险 URL、term 唯一稳定、离线可访问）。不要包含 package.json、node_modules、SDK 或主程序。

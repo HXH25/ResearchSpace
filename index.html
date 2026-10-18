@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    try {
+      const prefs = JSON.parse(localStorage.getItem('researchspace:ui-preferences:v1') || '{}');
+      if (['forest', 'ocean', 'violet', 'rose', 'amber'].includes(prefs.theme)) document.documentElement.dataset.theme = prefs.theme;
+      if (prefs.locale === 'en') document.documentElement.lang = 'en';
+    } catch (_) {}
+  </script>
+  <meta name="theme-color" content="#f7f9f8" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta name="description" content="ResearchSpace — 从好奇到科研的第一步" />
+  <title>ResearchSpace · 本科生科研空间</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

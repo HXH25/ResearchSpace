@@ -1,0 +1,76 @@
+[
+  {
+    "faculty": {
+      "id": "faculty:demo:language", "name": "演示导师 A（虚构）", "nameEnglish": "Demo Faculty A",
+      "institution": "清华大学（演示场景）", "department": "计算机方向（虚构）", "researchAreas": ["ai-computing"],
+      "researchSummary": "虚构的研究场景：围绕大语言模型的幻觉、回答可靠性与检索增强，比较不同的评测方法。",
+      "selectedWorks": [{"title": "演示论文：如何记录语言模型回答中的证据缺口（非真实论文）", "year": 2026}],
+      "groupName": "可信语言研究小组（虚构）", "teamMembers": [{"name": "演示成员 A（虚构）", "role": "phd", "researchInterests": ["回答评测"], "sourceIds": ["demo-a"]}],
+      "undergraduateParticipation": "演示案例：本科生整理一小组问题与回答，练习记录出处和误差。不是实际项目或招募承诺。",
+      "recruitmentStatus": "unknown", "lastCheckedAt": "2026-10-18T00:00:00Z", "isDemo": true,
+      "sources": [{"id": "demo-a", "title": "虚构资料卡 A · 非官方来源", "url": "https://example.invalid/faculty/language", "type": "mock", "publisher": "ResearchSpace 演示数据", "accessedAt": "2026-10-18T00:00:00Z", "note": "本链接仅占位，未对应真实网页。"}]
+    },
+    "keywords": ["LLM", "大语言模型", "幻觉", "RAG", "检索增强", "Python"],
+    "preparation": {"skills": ["programming", "literature-reading", "data-analysis"], "workPreferences": ["coding", "literature", "data"], "task": "自拟 5 个知识问题，记录答案中的来源与待核查项，写一页评测记录。此为学习建议，不是团队任务。"},
+    "factSourceIds": {"background": ["demo-a"], "works": ["demo-a"], "team": ["demo-a"], "participation": ["demo-a"]},
+    "media": [{"title": "演示讲座：从一个答案追问证据（虚构）", "publisher": "虚构学术交流会", "publishedAt": "2026-09-01T00:00:00Z", "url": "https://example.invalid/talk/language", "topic": "语言模型评测", "sourceIds": ["demo-a"]}]
+  },
+  {
+    "faculty": {
+      "id": "faculty:demo:robotics", "name": "演示导师 B（虚构）", "institution": "清华大学（演示场景）", "department": "电子工程方向（虚构）",
+      "researchAreas": ["electronics-engineering", "ai-computing"], "researchSummary": "虚构的研究场景：通过机器人感知、强化学习与控制理解智能体如何完成任务。",
+      "selectedWorks": [{"title": "演示论文：机器人策略的失败案例分析（非真实论文）", "year": 2025}],
+      "groupName": "智能感知与控制小组（虚构）", "dailyMentorship": "演示指导资料：以每周一次任务复盘为例展示信息结构，不代表真实团队的安排。",
+      "recruitmentStatus": "past_opening", "recruitmentVerifiedAt": "2025-10-01T00:00:00Z", "lastCheckedAt": "2026-10-18T00:00:00Z", "isDemo": true,
+      "sources": [{"id": "demo-b", "title": "虚构资料卡 B · 历史招募场景", "url": "https://example.invalid/faculty/robotics", "type": "mock", "accessedAt": "2026-10-18T00:00:00Z"}]
+    },
+    "keywords": ["机器人", "robotics", "强化学习", "reinforcement learning", "控制"],
+    "preparation": {"skills": ["programming", "math", "experiment"], "workPreferences": ["coding", "experiments"], "task": "画出一个简单机器人的感知、决策与执行流程，并列出两个可能失败的环节。"},
+    "factSourceIds": {"background": ["demo-b"], "works": ["demo-b"], "team": ["demo-b"], "mentorship": ["demo-b"], "recruitment": ["demo-b"]}
+  },
+  {
+    "faculty": {
+      "id": "faculty:demo:protein", "name": "演示导师 C（虚构）", "institution": "清华大学（演示场景）", "department": "生命科学方向（虚构）",
+      "researchAreas": ["bio-medicine", "ai-computing"], "researchSummary": "虚构的研究场景：用公开结构与序列资料，探索蛋白质功能、生物信息和药物发现的问题。",
+      "recruitmentStatus": "unknown", "lastCheckedAt": "2026-10-17T00:00:00Z", "isDemo": true,
+      "sources": [{"id": "demo-c", "title": "虚构资料卡 C · 缺失团队与论文信息的场景", "url": "https://example.invalid/faculty/protein", "type": "mock", "accessedAt": "2026-10-17T00:00:00Z"}]
+    },
+    "keywords": ["蛋白质", "protein", "生物信息", "药物发现"],
+    "preparation": {"skills": ["data-analysis", "literature-reading"], "workPreferences": ["data", "literature"], "task": "选择一个公开蛋白质条目，辨认序列、结构和功能注释，记录三者的区别与未知项。"},
+    "factSourceIds": {"background": ["demo-c"]}
+  },
+  {
+    "faculty": {
+      "id": "faculty:demo:circuits", "name": "演示导师 D（虚构）", "institution": "清华大学（演示场景）", "department": "电子工程方向（虚构）",
+      "researchAreas": ["electronics-engineering"], "researchSummary": "虚构的研究场景：围绕低功耗传感器、信号处理与电路实验，练习提出可测量的研究问题。",
+      "selectedWorks": [{"title": "演示论文：传感信号中的噪声观察（非真实论文）", "year": 2024}],
+      "recruitmentStatus": "closed", "recruitmentVerifiedAt": "2026-10-01T00:00:00Z", "lastCheckedAt": "2026-10-16T00:00:00Z", "isDemo": true,
+      "sources": [{"id": "demo-d", "title": "虚构资料卡 D · 已关闭场景", "url": "https://example.invalid/faculty/circuits", "type": "mock", "accessedAt": "2026-10-16T00:00:00Z"}]
+    },
+    "keywords": ["电路", "传感器", "信号处理", "sensor"],
+    "preparation": {"skills": ["experiment", "math", "data-analysis"], "workPreferences": ["experiments", "data"], "task": "用已有课程实验数据画出信号变化，标记测量条件和可能误差；没有数据时先设计记录表。"},
+    "factSourceIds": {"background": ["demo-d"], "works": ["demo-d"], "recruitment": ["demo-d"]}
+  },
+  {
+    "faculty": {
+      "id": "faculty:demo:learning", "name": "演示导师 E（虚构）", "institution": "清华大学（演示场景）", "department": "计算机方向（虚构）",
+      "researchAreas": ["ai-computing"], "researchSummary": "虚构的研究场景：研究机器学习中的数据偏差、可解释性与小样本评估。",
+      "recruitmentStatus": "unknown", "lastCheckedAt": "2026-10-15T00:00:00Z", "isDemo": true,
+      "sources": [{"id": "demo-e", "title": "虚构资料卡 E", "url": "https://example.invalid/faculty/learning", "type": "mock", "accessedAt": "2026-10-15T00:00:00Z"}]
+    },
+    "keywords": ["机器学习", "machine learning", "可解释性", "数据偏差", "Python"],
+    "preparation": {"skills": ["math", "programming", "data-analysis"], "workPreferences": ["theory", "coding", "data"], "task": "选一个公开数据集，先描述样本如何采集、哪些人或场景可能没有被覆盖，再考虑训练模型。"},
+    "factSourceIds": {"background": ["demo-e"]}
+  },
+  {
+    "faculty": {
+      "id": "faculty:demo:international", "name": "演示导师 F（虚构）", "nameEnglish": "Demo Faculty F", "institution": "海外示例大学（虚构）", "department": "计算研究中心（虚构）",
+      "researchAreas": ["ai-computing", "bio-medicine"], "researchSummary": "虚构的研究场景：探索机器学习与生物数据的交叉应用，用于体验跨机构检索。",
+      "recruitmentStatus": "unknown", "lastCheckedAt": "2026-10-14T00:00:00Z", "isDemo": true,
+      "sources": [{"id": "demo-f", "title": "虚构资料卡 F · 海外场景不代表申请资格", "url": "https://example.invalid/faculty/international", "type": "mock", "accessedAt": "2026-10-14T00:00:00Z"}]
+    },
+    "keywords": ["机器学习", "生物数据", "machine learning"],
+    "preparation": {"skills": ["data-analysis", "literature-reading"], "workPreferences": ["data", "literature"], "task": "对照一篇入门资料的中英文术语，整理概念表，并记录数据使用的许可与限制。"},
+    "factSourceIds": {"background": ["demo-f"]}
+  }
+]

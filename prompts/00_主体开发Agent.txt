@@ -1,0 +1,29 @@
+【角色】你是 ResearchSpace 主程序（Host）开发 Agent，目标是交付可运行、可替换功能模块的 React 网站主程序。
+【开始前必须阅读】项目根目录 MEMORY.md、docs/产品规划.md、docs/模块集成协议.md、src/sdk/contracts.ts（v1.0.0）。这是冻结的协同开发协议。你拿到的是已有宿主工程，要增量维护，不要从零覆盖。
+
+一、产品定位
+ResearchSpace 是“连接”主题的本科生科研探索空间，面向清华大学本科生起步，扩展公开国内外本科生科研机会。核心流程：本地账号→六步科研画像→导师/机会→公共交流→个性化联系草稿。主程序负责框架和四模块插槽，不假装功能插件已接入。
+
+二、主程序必须交付的功能
+1. React 19 + TypeScript + Vite + React Router + TailwindCSS，移动端自适应。
+2. / 落地页；/welcome 本地账户创建、切换；/onboarding 新用户必经的六步选项题；/app 首页；/app/profile 查看与编辑画像；/app/settings 数据隐私/导入导出/模块状态；四路由 /app/faculty/*、/app/opportunities/*、/app/community/*、/app/outreach/*。
+3. 本地存储采用 IndexedDB；本地账户无需邮箱和密码，不是校内实名认证，清晰向用户说明不能跨浏览器/设备同步。允许多档案并按 userId 隔离模块数据。支持账户删除、全量 JSON 备份导入导出（导入前严格校验）。
+4. 画像单一数据源 StudentProfile，必须兼容 schemaVersion=1：年级、参与目标、兴趣领域与关键词、技能与作品证据、科研经历、任务偏好、指导方式、每周时间、何时开始、使用语言。允许跳过/不确定。不得要求真实姓名/GPA。
+5. 首页应反映用户画像（兴趣、目标、时间、资料完成度），提供四个模块入口。未安装模块展示明确占位，不白屏。
+6. Vite `import.meta.glob(...,{eager:true})` 自动识别 `src/modules/<id>/module.tsx` 的 default ResearchModule，严格校验 ID、contractVersion、Root 和文件夹路径；独立模块崩溃需有错误边界。
+7. HostApi：`navigation`、`catalog`、`storage`、`ai`、`config`，接口定义只以 src/sdk/contracts.ts 为准。跨模块导师和机会 Provider 从对应模块转发；未安装时返回 [] 或 null。
+8. Module storage 按本地账户 UUID 与 moduleId 双重隔离；禁止功能模块直接使用浏览器全局存储访问其他人数据。
+9. AI 接口：只接服务器侧代理 URL（VITE_AI_PROXY_URL），没有时 state='unconfigured'；不能把任何 API Key 放在 VITE_ 前缀变量里；真实画像发送到外部模型前须有具体数据预览和显式同意，HostApi 应拒绝未同意请求。
+10. GitHub Discussions 接入配置为 VITE_COMMUNITY_REPO / REPO_ID / CATEGORY / CATEGORY_ID；不捏造仓库 ID，未配置时功能模块正常降级。
+11. 统一加载、空数据、错误提示、导航焦点、键盘操作；每个子模块通过自己 Root 挂在 Shell 内，宿主不直接依赖子模块内文件。
+12. 提供 docs、README、.env.example、模块最小示例、单元测试及安装集成测试；所有用户可见文案为中文（技术术语除外）。
+
+三、禁止改变的公共约定
+模块 ID 固定 faculty / opportunities / community / outreach；入口 `src/modules/<id>/module.tsx`；`import type { ResearchModule, ModulePageProps } from '@/sdk/contracts'`；default export ResearchModule；不允许破坏 src/sdk/contracts.ts 的 v1.0.0。第三方 Agent 只负责它们自己的模块目录。调整协议需主程序维护者提出新版本并统一迁移。
+
+四、联调与验收
+运行 `npm install`, `npm run check`（包含静态模块检查、tsc、vitest、vite build）。提供缺省状态与装入示例模块后的演示；校验 A 账户不会读到 B 账户模块数据，画像编辑后模块渲染更新，非法模块不能白屏，备份可恢复。
+交付整个宿主源码 ZIP，不包含 node_modules/dist/模型密钥；文件结构为直接解压的项目根文件，不能额外套一层重复目录。每项功能标注“已实现 / 需接第三方模块 / 需真实数据源”。
+
+五、首版不做的事
+不伪造套瓷成功概率、不强制学校统一认证、不用本地账号冒充 GitHub 发帖身份、不提供未经核实的当期招募状态、不自动发送邮件、不抓取登录限制的校内网页、不为降低难度偷偷删掉模块接口。

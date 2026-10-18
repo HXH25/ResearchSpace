@@ -1,0 +1,33 @@
+[
+  {
+    "title": "【虚构字段示例】机器人科研项目（不是实际机会）",
+    "source_id": "example_only",
+    "source_record_id": "example-001",
+    "source_url": "https://example.edu/research/example-001",
+    "kind": "project",
+    "visibility": "private",
+    "description": "仅演示字段结构，请替换为经过核实的真实信息。",
+    "institution": "示例大学",
+    "region": "示例地区",
+    "mentors": [],
+    "team": "",
+    "period_text": "",
+    "application_method": "",
+    "eligibility_text": "",
+    "status": "unknown",
+    "reviewed": false,
+    "tags": [
+      "机器人"
+    ],
+    "warnings": [
+      "虚构模板，不可用于实际申请。"
+    ],
+    "evidence": [
+      {
+        "field": "example",
+        "url": "https://example.edu/research/example-001",
+        "method": "fictional_schema_example"
+      }
+    ]
+  }
+]

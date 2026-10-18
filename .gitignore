@@ -1,0 +1,37 @@
+# Dependencies and build caches (dist is intentionally committed for Python-only users)
+node_modules/
+.vite/
+coverage/
+.qa/
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Local runtime, credentials and machine-specific material
+.runtime/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+.DS_Store
+Thumbs.db
+*.log
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+!data/thu_faculty/faculty.sqlite
+
+# Never commit SRT data accidentally. Only the documented interface files are publishable.
+data/thu_srt/*
+!data/thu_srt/README.md
+!data/thu_srt/data_dictionary.json
+!data/thu_srt/schema.sql
+!data/thu_srt/query.py
+
+# Imported backups and archives
+*.zip
+*.bak

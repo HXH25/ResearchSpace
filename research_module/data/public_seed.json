@@ -1,0 +1,373 @@
+[
+  {
+    "source_id": "hkust_urop",
+    "source_record_id": "https://urop.hkust.edu.hk/projects/machine-learning-techniques-creating-visual-art-content",
+    "source_url": "https://urop.hkust.edu.hk/projects/machine-learning-techniques-creating-visual-art-content",
+    "title": "Machine Learning Techniques in Creating Visual Art Content",
+    "collected_at": "2026-10-18",
+    "reviewed": true,
+    "visibility": "public",
+    "status": "unknown",
+    "kind": "project",
+    "evidence": [
+      {
+        "field": "record",
+        "url": "https://urop.hkust.edu.hk/projects/machine-learning-techniques-creating-visual-art-content",
+        "checked_at": "2026-10-18",
+        "method": "manual_review_of_official_page"
+      },
+      {
+        "field": "eligibility",
+        "url": "https://urop.hkust.edu.hk/For_Students",
+        "checked_at": "2026-10-18"
+      },
+      {
+        "field": "period_text",
+        "url": "https://urop.hkust.edu.hk/projects",
+        "checked_at": "2026-10-18"
+      }
+    ],
+    "institution": "香港科技大学",
+    "region": "中国香港",
+    "description": "探索生成式模型、风格迁移与图像增强，将机器学习用于视觉艺术创作；参与文献调研、数据准备、算法实验和结果汇报。",
+    "mentors": [
+      "LUO, Wenhan"
+    ],
+    "tags": [
+      "机器学习",
+      "计算机视觉",
+      "人工智能"
+    ],
+    "skills": [
+      "Python",
+      "PyTorch"
+    ],
+    "period_text": "2024–25 春季起，列表标为持续；个人研究周期未公布。",
+    "required_institution": "香港科技大学",
+    "allowed_degrees": [
+      "bachelor"
+    ],
+    "work_types": [
+      "实验",
+      "代码"
+    ],
+    "goals": [
+      "尝试科研"
+    ],
+    "eligibility_text": "优先具备 Python 和机器学习框架基础；还须满足 UROP 通用资格。 参与者须在香港科技大学全日制学位课程就读且已完成至少两个学期；不同 UROP 课程还有不同成绩等条件。",
+    "application_method": "核对官方学生资格和课程安排，通过项目页面的 Apply 入口提交。",
+    "application_url": "https://urop.hkust.edu.hk/projects/machine-learning-techniques-creating-visual-art-content",
+    "warnings": [
+      "公开可读不等于对外校学生开放；列表开放期不等于学生研究周期；需确认当前名额。"
+    ]
+  },
+  {
+    "source_id": "hkust_urop",
+    "source_record_id": "https://urop.hkust.edu.hk/projects/deepqmc-survey-profiling-neural-network-quantum-monte-carlo",
+    "source_url": "https://urop.hkust.edu.hk/projects/deepqmc-survey-profiling-neural-network-quantum-monte-carlo",
+    "title": "DeepQMC-Survey — Profiling Neural-Network Quantum Monte Carlo",
+    "collected_at": "2026-10-18",
+    "reviewed": true,
+    "visibility": "public",
+    "status": "unknown",
+    "kind": "project",
+    "evidence": [
+      {
+        "field": "record",
+        "url": "https://urop.hkust.edu.hk/projects/deepqmc-survey-profiling-neural-network-quantum-monte-carlo",
+        "checked_at": "2026-10-18",
+        "method": "manual_review_of_official_page"
+      },
+      {
+        "field": "eligibility",
+        "url": "https://urop.hkust.edu.hk/For_Students",
+        "checked_at": "2026-10-18"
+      },
+      {
+        "field": "period_text",
+        "url": "https://urop.hkust.edu.hk/projects",
+        "checked_at": "2026-10-18"
+      }
+    ],
+    "institution": "香港科技大学",
+    "region": "中国香港",
+    "description": "围绕神经网络变分蒙特卡洛计算，扩展 GPU 性能剖析与可复现基准；比较运行时间、显存和计算效率。",
+    "mentors": [
+      "CHENG, Lixue"
+    ],
+    "tags": [
+      "量子",
+      "机器学习",
+      "科学计算"
+    ],
+    "skills": [],
+    "period_text": "列表开放期：2026–27 秋至 2028–29 秋；这不是承诺给学生的参与周期。",
+    "required_institution": "香港科技大学",
+    "allowed_degrees": [
+      "bachelor"
+    ],
+    "work_types": [
+      "实验"
+    ],
+    "goals": [
+      "尝试科研"
+    ],
+    "eligibility_text": "具体先修要求未列明；须满足 UROP 通用资格。 参与者须在香港科技大学全日制学位课程就读且已完成至少两个学期；不同 UROP 课程还有不同成绩等条件。",
+    "application_method": "核对官方学生资格和课程安排，通过项目页面的 Apply 入口提交。",
+    "application_url": "https://urop.hkust.edu.hk/projects/deepqmc-survey-profiling-neural-network-quantum-monte-carlo",
+    "warnings": [
+      "公开可读不等于对外校学生开放；列表开放期不等于学生研究周期；需确认当前名额。"
+    ]
+  },
+  {
+    "source_id": "hkust_urop",
+    "source_record_id": "https://urop.hkust.edu.hk/projects/development-food-3d-printing-support-ai",
+    "source_url": "https://urop.hkust.edu.hk/projects/development-food-3d-printing-support-ai",
+    "title": "Development of food 3D printing with the support of AI",
+    "collected_at": "2026-10-18",
+    "reviewed": true,
+    "visibility": "public",
+    "status": "unknown",
+    "kind": "project",
+    "evidence": [
+      {
+        "field": "record",
+        "url": "https://urop.hkust.edu.hk/projects/development-food-3d-printing-support-ai",
+        "checked_at": "2026-10-18",
+        "method": "manual_review_of_official_page"
+      },
+      {
+        "field": "eligibility",
+        "url": "https://urop.hkust.edu.hk/For_Students",
+        "checked_at": "2026-10-18"
+      },
+      {
+        "field": "period_text",
+        "url": "https://urop.hkust.edu.hk/projects",
+        "checked_at": "2026-10-18"
+      }
+    ],
+    "institution": "香港科技大学",
+    "region": "中国香港",
+    "description": "结合人工智能图像生成和食品科学，将用户需求转成食品外观及打印指令，参与系统开发和原型制作。",
+    "mentors": [
+      "LIU Yuanshuai"
+    ],
+    "tags": [
+      "3D打印",
+      "人工智能",
+      "食品工程"
+    ],
+    "skills": [],
+    "period_text": "2024–25 春季起，列表标为持续；个人研究周期未公布。",
+    "required_institution": "香港科技大学",
+    "allowed_degrees": [
+      "bachelor"
+    ],
+    "work_types": [
+      "实验"
+    ],
+    "goals": [
+      "尝试科研"
+    ],
+    "eligibility_text": "具体先修要求未列明；须满足 UROP 通用资格。 参与者须在香港科技大学全日制学位课程就读且已完成至少两个学期；不同 UROP 课程还有不同成绩等条件。",
+    "application_method": "核对官方学生资格和课程安排，通过项目页面的 Apply 入口提交。",
+    "application_url": "https://urop.hkust.edu.hk/projects/development-food-3d-printing-support-ai",
+    "warnings": [
+      "公开可读不等于对外校学生开放；列表开放期不等于学生研究周期；需确认当前名额。"
+    ]
+  },
+  {
+    "source_id": "hkust_urop",
+    "source_record_id": "https://urop.hkust.edu.hk/projects/exploring-organic-electrochemical-transistors",
+    "source_url": "https://urop.hkust.edu.hk/projects/exploring-organic-electrochemical-transistors",
+    "title": "Exploring Organic Electrochemical Transistors",
+    "collected_at": "2026-10-18",
+    "reviewed": true,
+    "visibility": "public",
+    "status": "unknown",
+    "kind": "project",
+    "evidence": [
+      {
+        "field": "record",
+        "url": "https://urop.hkust.edu.hk/projects/exploring-organic-electrochemical-transistors",
+        "checked_at": "2026-10-18",
+        "method": "manual_review_of_official_page"
+      },
+      {
+        "field": "eligibility",
+        "url": "https://urop.hkust.edu.hk/For_Students",
+        "checked_at": "2026-10-18"
+      },
+      {
+        "field": "period_text",
+        "url": "https://urop.hkust.edu.hk/projects",
+        "checked_at": "2026-10-18"
+      }
+    ],
+    "institution": "香港科技大学",
+    "region": "中国香港",
+    "description": "开展有机电化学晶体管设计、材料表征和电流电压测试，理解离子传导与器件工作原理，探索柔性电子和生物传感应用。",
+    "mentors": [
+      "TANG, Cindy"
+    ],
+    "tags": [
+      "半导体",
+      "电子",
+      "材料",
+      "生物工程"
+    ],
+    "skills": [],
+    "period_text": "列表开放期：2025–26 秋至 2030–31 夏；个人参与周期需与导师确认。",
+    "required_institution": "香港科技大学",
+    "allowed_degrees": [
+      "bachelor"
+    ],
+    "work_types": [
+      "实验"
+    ],
+    "goals": [
+      "尝试科研"
+    ],
+    "eligibility_text": "介绍面向无既往科研背景学生；实际课程资格和任务难度须确认。 参与者须在香港科技大学全日制学位课程就读且已完成至少两个学期；不同 UROP 课程还有不同成绩等条件。",
+    "application_method": "核对官方学生资格和课程安排，通过项目页面的 Apply 入口提交。",
+    "application_url": "https://urop.hkust.edu.hk/projects/exploring-organic-electrochemical-transistors",
+    "warnings": [
+      "公开可读不等于对外校学生开放；列表开放期不等于学生研究周期；需确认当前名额。"
+    ]
+  },
+  {
+    "source_id": "eth_ssrf",
+    "source_record_id": "https://inf.ethz.ch/studies/summer-research-fellowship/how-to-apply.html",
+    "source_url": "https://inf.ethz.ch/studies/summer-research-fellowship/how-to-apply.html",
+    "title": "ETH Student Summer Research Fellowship",
+    "collected_at": "2026-10-18",
+    "reviewed": true,
+    "visibility": "public",
+    "status": "upcoming",
+    "kind": "program",
+    "evidence": [
+      {
+        "field": "record",
+        "url": "https://inf.ethz.ch/studies/summer-research-fellowship/how-to-apply.html",
+        "checked_at": "2026-10-18",
+        "method": "manual_review_of_official_page"
+      },
+      {
+        "field": "excluded_institution",
+        "url": "https://inf.ethz.ch/studies/summer-research-fellowship.html",
+        "checked_at": "2026-10-18"
+      }
+    ],
+    "institution": "ETH Zurich",
+    "region": "瑞士",
+    "description": "计算机科学暑期科研计划，通过匹配研究方向进入接收实验室开展研究。具体课题和导师由项目安排。",
+    "tags": [
+      "计算机",
+      "机器学习",
+      "电子",
+      "数学",
+      "物理"
+    ],
+    "goals": [
+      "暑研",
+      "海外科研"
+    ],
+    "period_text": "官网暂定 2027-07-01 至 2027-08-28（待最终确认）；要求覆盖七、八月。",
+    "eligibility_text": "计算机或相关专业本科/硕士；项目开始时已完成两年学习；当前学位预计毕业时间须在项目翌年或以后；须满足完整在场与英语工作能力要求。ETH 在读学生不在接收范围内。",
+    "allowed_degrees": [
+      "bachelor",
+      "master"
+    ],
+    "excluded_institution": "ETH Zurich",
+    "required_language": "英语",
+    "application_method": "通过官方 SiROP 申请入口提交英文简历、正式成绩单与动机信；官网要求不要直接联系教师。下一轮预计2026年11月初开放，具体截止日待确认。",
+    "application_url": "https://inf.ethz.ch/studies/summer-research-fellowship/how-to-apply.html",
+    "status_verified_at": "2026-10-18",
+    "status_evidence": "官方申请页当前关闭，说明下一窗口于2026年11月初开放。",
+    "warnings": [
+      "2027具体日期仍待确认；未把项目开始时的年级要求直接套用为当前年级。"
+    ]
+  },
+  {
+    "source_id": "epfl_summer",
+    "source_record_id": "https://summer.epfl.ch/",
+    "source_url": "https://summer.epfl.ch/",
+    "title": "Summer@EPFL",
+    "collected_at": "2026-10-18",
+    "reviewed": true,
+    "visibility": "public",
+    "status": "unknown",
+    "kind": "program",
+    "evidence": [
+      {
+        "field": "record",
+        "url": "https://summer.epfl.ch/",
+        "checked_at": "2026-10-18",
+        "method": "manual_review_of_official_page"
+      }
+    ],
+    "institution": "EPFL",
+    "region": "瑞士",
+    "description": "计算机与通信科学学院面向国际学生的暑期科研计划，在研究团队中完成编程、设计等研究工作。",
+    "tags": [
+      "计算机",
+      "电子",
+      "通信"
+    ],
+    "goals": [
+      "暑研",
+      "海外科研"
+    ],
+    "work_types": [
+      "代码",
+      "设计"
+    ],
+    "period_text": "通常两至三个月，具体时间与接收实验室协商。",
+    "eligibility_text": "计算机、计算机工程、通信或电子工程相关本科或硕士在读；申请时须在本科二年级或以上；博士生不适用。",
+    "allowed_degrees": [
+      "bachelor",
+      "master"
+    ],
+    "min_year": 2,
+    "application_method": "从官网 Apply 进入当年申请系统；页面说明年度申请规律，当前轮开放状态及截止日期需在当年系统确认。",
+    "application_url": "https://summer.epfl.ch/",
+    "warnings": [
+      "未将往年或年度惯例推算成当前已确认开放日期。"
+    ]
+  },
+  {
+    "source_id": "thu_public",
+    "source_record_id": "https://www.tsinghua.edu.cn/gjhz/info/1088/2769.htm",
+    "source_url": "https://www.tsinghua.edu.cn/gjhz/info/1088/2769.htm",
+    "title": "清华大学海外实验室短期研修渠道",
+    "collected_at": "2026-10-18",
+    "reviewed": true,
+    "visibility": "public",
+    "status": "unknown",
+    "kind": "program",
+    "evidence": [
+      {
+        "field": "record",
+        "url": "https://www.tsinghua.edu.cn/gjhz/info/1088/2769.htm",
+        "checked_at": "2026-10-18",
+        "method": "manual_review_of_official_page"
+      }
+    ],
+    "institution": "清华大学",
+    "region": "中国大陆",
+    "description": "清华国际合作与交流处介绍的海外实验室研修渠道，学生可参与海外大学实验室的研究工作。该页面是渠道介绍，未公布具体课题。",
+    "period_text": "实验室研修通常4–12周。",
+    "goals": [
+      "海外科研",
+      "暑研"
+    ],
+    "required_institution": "清华大学",
+    "eligibility_text": "面向具备科研兴趣与潜力的学生；具体年级、院系及选拔要求须查看当期项目通知。",
+    "application_method": "关注清华国际合作与交流处当期通知；介绍页说明实验室暑期研修通常于9–11月申请，但不是本轮开放证明。",
+    "application_url": "https://www.tsinghua.edu.cn/gjhz/info/1088/2769.htm",
+    "warnings": [
+      "渠道级信息；具体导师、团队与研究主题未公布。"
+    ]
+  }
+]

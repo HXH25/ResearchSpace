@@ -1,0 +1,15 @@
+{
+  "institution": "",
+  "degree": "bachelor",
+  "year": 2,
+  "interests": ["机器人", "机器学习", "3D打印"],
+  "skills": ["Python", "数学"],
+  "experience": "示例：完成过一个课程设计。请替换为真实经历。",
+  "work_types": ["代码", "实验"],
+  "goals": ["尝试科研", "暑研"],
+  "regions": [],
+  "languages": ["中文", "英语"],
+  "hours_per_week": 10,
+  "start_date": "",
+  "end_date": ""
+}

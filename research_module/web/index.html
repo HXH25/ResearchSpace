@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#194f47"><title>ResearchSpace · 找到你的科研连接</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body>
+<aside class="sidebar"><a class="brand" href="/"><span class="brand-mark">R<span>↗</span></span><span>ResearchSpace<small>本科生科研空间</small></span></a><div class="nav-label">你的科研旅程</div><nav aria-label="主导航"><button class="nav active" data-view="explore"><span>◈</span> 发现项目</button><button class="nav" data-view="profile"><span>◎</span> 我的画像</button><button class="nav" data-view="saved"><span>☆</span> 候选清单 <b id="saved-count">0</b></button><button class="nav" data-view="sources"><span>⊞</span> 数据与来源</button></nav><div class="sidebar-note"><span class="tiny-dot"></span> 每一次连接，都有依据<p>从兴趣出发，发现值得探索的研究。</p></div><div class="account"><div class="avatar">你</div><div><label for="account-select">本地身份</label><select id="account-select"><option value="default">我的空间</option></select></div><button id="new-account" title="创建本地身份" aria-label="创建本地身份">＋</button></div></aside>
+<main><header class="topbar"><span id="breadcrumb">探索 / 科研项目</span><div><span id="mode" class="chip">公开信息</span><button class="text-button" id="profile-shortcut">编辑画像 ↗</button></div></header><section id="content" aria-live="polite"></section><footer>ResearchSpace · 连接兴趣与真实研究 <span>公开来源 · 可解释匹配 · 自主决定</span></footer></main>
+<dialog id="detail"><button class="dialog-close" aria-label="关闭详情">×</button><div id="detail-content"></div></dialog>
+<div id="toast" role="status"></div>
+<noscript>请启用 JavaScript 使用搜索与推荐功能。</noscript>
+</body></html>

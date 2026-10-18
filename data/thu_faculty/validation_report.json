@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-10-18T08:36:27.274881+00:00",
+  "sqlite_integrity": "ok",
+  "foreign_key_check": "ok",
+  "profile_ids_unique": true,
+  "official_source_domains_only": true,
+  "csv_json_counts_match": {
+    "faculty_profiles": 4026,
+    "departments": 133,
+    "unverified_candidates": 875,
+    "pending_profiles": 1756,
+    "pending_directories": 1230,
+    "collection_gaps": 3662
+  },
+  "review_scope": "Automated structural checks plus representative content review; not a manual audit of every record",
+  "content_rules_checked": [
+    "scope research text to one roster card",
+    "exclude navigation labels and publication lists",
+    "do not infer missing research topics",
+    "do not use search-query unit as affiliation evidence"
+  ],
+  "note": "Original multi-file data archive is not included. This public release retains only sanitized faculty SQLite and metadata."
+}

@@ -1,0 +1,17 @@
+{
+  "notice": "全部为虚构联调数据，不代表任何真实导师、邮箱或科研机会；生产入口不会自动加载。",
+  "faculty": [{
+    "id": "faculty:demo:researcher", "name": "示例导师（虚构）", "nameEnglish": "Example Researcher",
+    "institution": "示例大学（虚构）", "officialPage": "https://example.org/faculty",
+    "researchAreas": ["ai-computing"], "researchSummary": "用于展示多模态研究方向资料的虚构示例。",
+    "recruitmentStatus": "unknown", "lastCheckedAt": "2026-10-18T00:00:00Z", "isDemo": true,
+    "sources": [{"id":"demo-faculty","title":"虚构导师演示来源","url":"https://example.org/faculty","type":"mock","accessedAt":"2026-10-18T00:00:00Z"}]
+  }],
+  "opportunities": [{
+    "id":"opportunity:demo:project", "title":"本科科研体验（虚构演示）", "institution":"示例大学（虚构）",
+    "countryOrRegion":"演示", "type":"srt", "researchAreas":["ai-computing"], "summary":"虚构的项目展示，不能用于申请。",
+    "eligibility":"unknown", "status":"unknown", "lastCheckedAt":"2026-10-18T00:00:00Z",
+    "linkedFacultyIds":["faculty:demo:researcher"], "isDemo":true,
+    "sources":[{"id":"demo-project","title":"虚构项目演示来源","url":"https://example.org/project","type":"mock","accessedAt":"2026-10-18T00:00:00Z"}]
+  }]
+}

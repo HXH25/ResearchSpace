@@ -1,0 +1,30 @@
+【任务】你是 ResearchSpace 的 opportunities 模块开发 Agent。输出完全独立的科研项目搜索/推荐功能包 `opportunities-module.zip`，可直接解压到主程序中。
+
+一、公共协议必须严格遵守
+附带材料：MEMORY.md、docs/产品规划.md、docs/模块集成协议.md、src/sdk/contracts.ts。协议 v1.0.0，不得擅改。只写 `src/modules/opportunities/` 内文件，入口 `src/modules/opportunities/module.tsx`，default export `ResearchModule`，`id:'opportunities'`, `icon:'flask-conical'`, `Root` 接收 `{profile,api}:ModulePageProps`；额外导出 `providers.opportunities` 满足 OpportunityProvider。禁止修改主程序、其他模块、SDK、锁文件、环境变量。
+
+二、场景与核心需求
+聚合清华大学 SRT、本科生科研训练、科研助理/实习，以及国内其他大学和海外大学**公开发布**的本科科研项目。按照用户 StudentProfile 的兴趣、能力、时间和参与目标推荐，并且把“研究相关”“有资格申请”“目前确实开放”三项明显分开。
+
+三、必须完成的页面
+1. `/app/opportunities`：搜索关键词和学校/国家或地区/方向/项目类型/申请资格/状态等筛选，支持 `?q=`，支持“清华”“中国其他高校”“海外公开项目”三个浏览视图。
+2. 项目卡片展示：标题、机构、项目类型、简述、研究方向、资格、招募状态、核实日期（未证实状态不可标“正在招募”）、截止日期与原通知链接。
+3. `/app/opportunities/:id`：展示 `OpportunityRecord` 的全部关键字段，包括内容、预期任务、能力要求、指导/关联导师、研究周期、每周工作量、补助或学分（如公开）、申请方式、官方来源、时区。
+4. 画像推荐：对兴趣、目标、时间和公开资格做有解释的排序/过滤。海外公开网页 != 清华学生有申请资格；`eligibility='unknown'` 需标“需核实资格”。不要猜测海外签证、费用或开放名额。
+5. 关联入口：导师 `api.navigation.facultyPath(id)` + `api.catalog.getFacultyById`（仅当 linkedFacultyIds 有明确 ID 关联）；`api.navigation.go('/app/community?kind=opportunity&id=...')`; `api.navigation.go('/app/outreach?opportunityId=...')`。
+6. 支持本地收藏，使用 `api.storage`；可清晰显示来源错误/字段未知、人工纠错入口（可指导用户去 Issues，不要求直接写 GitHub）。
+
+四、数据与状态要求
+固定使用 SDK 的 `OpportunityRecord` / `OpportunityProvider` / `OpportunitySearchQuery` / `EvidenceSource`，不得自建冲突类型。每条必须有 `sources`, `lastCheckedAt`, `isDemo`。
+- `open_confirmed` 仅当原始公告/时间与 `statusVerifiedAt` 支持；不能通过网页仍能打开推断开放。
+- `upcoming` 需有未来开放时间证据；`closed` 需有明确截止或公告；其他状态归 `unknown`。
+- 截止日期若跨时区显示 `deadlineTimeZone`；来源无时区则明显提示“未知”。
+- 只在资格来源明确时设置 `tsinghua_only`, `home_institution_only`, `international_eligible`, `open_to_all`；不确定归 unknown。
+- 清华公开通知与需要登录校内平台的详细申请页分开显示：记录可核实的入口和可见范围，不能代替校内登录或绕过认证。
+
+五、可替换的数据发现与采集
+MVP 提供 zod 校验的 `fixtures/*.json`（全部虚构，`isDemo:true`, source.type='mock'），以及可替换 SourceAdapter 的静态快照读取实现。模块不在浏览器里直接爬网页，不内置任何未核实的真实招募“已开放”断言。预留清华 SRT 项目仓库数据入口——主程序后续会接一个 GitHub 仓库；允许导入规范化 JSON 快照，不要求该仓库当前存在。
+用户画像用于定向检索/推荐时保留用户是否授权把个人内容发往外部 AI 的边界；模块默认不发送画像到第三方。
+
+六、验收与交付
+ZIP 顶层路径直接是 `src/modules/opportunities/...`，不可有额外的外层目录。至少包括 module.tsx、README.md、筛选/详情、数据 adapter、fixtures、vitest 用例（搜索、资格过滤、状态、跨时区、跨模块联动）。不得打包主程序或新增根级依赖。必须能在 `api.catalog` 未接入 faculty 时独立运行。
